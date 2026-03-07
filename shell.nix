@@ -2,17 +2,7 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
-	tcsh
-    gcc
-    gnumake
-    cmake
-    verilator
-    gtkwave
-    octave
-    python3
-    python3Packages.numpy
-    python3Packages.matplotlib
-    python3Packages.scipy
+	lua
   ];
 
   shellHook = ''
