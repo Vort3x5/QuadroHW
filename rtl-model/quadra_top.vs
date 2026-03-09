@@ -11,6 +11,7 @@ module quadra_top
 );
     // Pipeline data valid (3 stages):
     dv_t dv_p0, dv_p1, dv_p2;
+	y_t y_comb;
 
     always_ff @(posedge clk)
     if (!rst_b) begin
@@ -25,6 +26,10 @@ module quadra_top
     end
 
     // <challenge!>
+	quadra u_quadra (
+		.x (x),
+		.y (y_comb)
+	);
 
     // Outputs:
     always_comb y_dv = dv_p2;

@@ -2,7 +2,7 @@
 
 rm -rf run-verilator.log
 
-set TOP_DIR = ${HOME}/prj/coding-exercise2s
+set TOP_DIR = `(cd .. && pwd)`
 set ACT_DIR = ${TOP_DIR}/libs/ac_types/include
 set CPP_DIR = ${TOP_DIR}/c++-model
 set RTL_DIR = ${TOP_DIR}/rtl-model
