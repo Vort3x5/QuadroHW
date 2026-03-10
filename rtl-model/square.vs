@@ -5,7 +5,5 @@ module square
     input  x2_t x2,
     output sq_t sq
 );
-    // Compute x2^2:
-    always_comb sq = x2 * x2;
-
-endmodule    
+    always_comb sq = sq_t'((34'({1'b0, x2}) * 34'({1'b0, x2})) >> 22);
+endmodule

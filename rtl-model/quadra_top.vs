@@ -9,30 +9,35 @@ module quadra_top
     output y_t  y,
     output dv_t y_dv
 );
-    // Pipeline data valid (3 stages):
     dv_t dv_p0, dv_p1, dv_p2;
-	y_t y_comb;
+    x_t  x_p0,  x_p1,  x_p2;
+    y_t  y_comb;
 
-    always_ff @(posedge clk)
-    if (!rst_b) begin
-        dv_p0 <= '0;
-        dv_p1 <= '0;
-        dv_p2 <= '0;
+    always_ff @(posedge clk) begin
+        if (!rst_b) begin
+            dv_p0 <= '0;
+            dv_p1 <= '0;
+            dv_p2 <= '0;
+            x_p0  <= '0;
+            x_p1  <= '0;
+            x_p2  <= '0;
+        end
+        else begin
+            dv_p0 <= x_dv;
+            dv_p1 <= dv_p0;
+            dv_p2 <= dv_p1;
+            x_p0  <= x;
+            x_p1  <= x_p0;
+            x_p2  <= x_p1;
+        end
     end
-    else begin
-        dv_p0 <= x_dv;
-        dv_p1 <= dv_p0;
-        dv_p2 <= dv_p1;
-    end
 
-    // <challenge!>
-	quadra u_quadra (
-		.x (x),
-		.y (y_comb)
-	);
+    quadra u_quadra (
+        .x_in (x_p2),
+        .y_out(y_comb)
+    );
 
-    // Outputs:
     always_comb y_dv = dv_p2;
-    always_comb y    = '0;
+    always_comb y    = y_comb;
 
 endmodule
