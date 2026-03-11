@@ -7,9 +7,9 @@ c = coeffs(:,4);
 
 K = length(k);
 
-A_I =  1; A_F = 19; A_W = A_I + A_F;
-B_I =  3; B_F = 13; B_W = B_I + B_F;
-C_I =  2; C_F =  7; C_W = C_I + C_F;
+A_I =  1; A_F = 20; A_W = A_I + A_F;
+B_I =  3; B_F = 14; B_W = B_I + B_F;
+C_I =  2; C_F =  8; C_W = C_I + C_F;
 
 a_q = round(a .* (2^A_F));
 b_q = round(b .* (2^B_F));

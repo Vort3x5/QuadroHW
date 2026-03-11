@@ -206,8 +206,8 @@ void testQuadra
     using namespace std;
 
     // Test params:
-//  uint32_t x_start = 0x000000; // 0.0
-    uint32_t x_start = 0xfffff0;
+    uint32_t x_start = 0x000000; // 0.0
+    //uint32_t x_start = 0xfffff0;
     uint32_t x_stop  = 0xffffff; // 1.999...
     uint32_t x_step  = 0x000001; // exhaustive test
 //  uint32_t x_step  = 0x000001; // sparse test

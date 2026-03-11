@@ -36,9 +36,9 @@ localparam int X2_W = 17;
 typedef logic [X1_W-1:0] x1_t;
 typedef logic [X2_W-1:0] x2_t;
 
-localparam int A_W = 20;
-localparam int B_W = 16;
-localparam int C_W = 9;
+localparam int A_W = 21;
+localparam int B_W = 17;
+localparam int C_W = 10;
 
 typedef logic signed [A_W-1:0] a_t;
 typedef logic signed [B_W-1:0] b_t;
