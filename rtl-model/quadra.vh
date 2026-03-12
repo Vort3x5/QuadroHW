@@ -29,22 +29,45 @@ typedef logic signed [Y_W-1:0] y_t;
 // Internal precision:
 // --------------------------------------------------------------------------------
 
-// <challenge!>
 localparam int X1_W = 7;
 localparam int X2_W = 17;
 
+localparam int A_W  = 21;
+localparam int B_W  = 17;
+localparam int C_W  = 10;
+
+localparam int SQ_W = 24;
+
 typedef logic [X1_W-1:0] x1_t;
 typedef logic [X2_W-1:0] x2_t;
-
-localparam int A_W = 21;
-localparam int B_W = 17;
-localparam int C_W = 10;
 
 typedef logic signed [A_W-1:0] a_t;
 typedef logic signed [B_W-1:0] b_t;
 typedef logic signed [C_W-1:0] c_t;
 
-localparam int SQ_W = 24;
 typedef logic [SQ_W-1:0] sq_t;
+
+// <challenge!>
+localparam int X1_I = 1;
+localparam int X1_F = X1_W - X1_I;
+
+localparam int X2_I = 0;
+localparam int X2_F = X_F;
+
+localparam int A_I = 1;
+localparam int B_I = 3;
+localparam int C_I = 2;
+
+localparam int A_F = A_W - A_I;
+localparam int B_F = B_W - B_I;
+localparam int C_F = C_W - C_I;
+
+localparam int SQ_I = X2_I + X2_I;
+localparam int SQ_F = SQ_W - SQ_I;
+
+localparam int R_F = 4;
+localparam int S_I = Y_I;
+localparam int S_F = Y_F + R_F;
+localparam int S_W = S_I + S_F;
 
 `endif

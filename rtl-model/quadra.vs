@@ -26,19 +26,6 @@ module quadra
         .sq(sq)
     );
 
-    localparam int A_I = 1;
-    localparam int B_I = 3;
-    localparam int C_I = 2;
-
-    localparam int A_F = A_W - A_I;
-    localparam int B_F = B_W - B_I;
-    localparam int C_F = C_W - C_I;
-
-    localparam int S_F  = Y_F + 4; 
-    localparam int X2_F = X_F; 
-    localparam int SQ_F = SQ_W; 
-    localparam int S_W  = S_F + 4; 
-
     localparam int A_SHIFT  = S_F - A_F;
     localparam int T1_SHIFT = (B_F + X2_F) - S_F;
     localparam int T2_SHIFT = (C_F + SQ_F) - S_F;
